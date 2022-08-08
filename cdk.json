@@ -33,6 +33,7 @@
     "@aws-cdk/core:target-partitions": [
       "aws",
       "aws-cn"
-    ]
+    ],
+    "admin_role_name": "Admin"
   }
 }
