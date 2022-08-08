@@ -31,5 +31,5 @@ class ApplicationStack(Stack):
             self, "ReactNamespace", cluster=eks_props["eks_cluster"], manifest=[react_ns_config], overwrite=True)
 
         react_deploy = eks.KubernetesManifest(self, "ReactDeployment", cluster=eks_props["eks_cluster"], manifest=[
-                                               react_deploy_config, react_service_config, react_ingress_config], overwrite=True)
+            react_deploy_config, react_service_config, react_ingress_config], overwrite=True)
         react_deploy.node.add_dependency(react_ns)

@@ -14,7 +14,7 @@ class EcrStack(Stack):
 
         react_app = DockerImageAsset(self, "React",
                                       directory="custom_cdk_react_game/application/react-wordle",
-                                      file="docker/Dockerfile"
+                                      file="Dockerfile"
                                       )
         
         self.output_props = ecr_props.copy()
