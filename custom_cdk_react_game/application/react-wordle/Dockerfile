@@ -5,6 +5,7 @@ RUN npm install
 COPY . .
 
 FROM node_modules AS prod_builder
+RUN npm install
 RUN npm run build
 
 FROM nginx:1.20.2-alpine
