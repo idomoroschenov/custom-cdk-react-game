@@ -1,9 +1,7 @@
 
-# Welcome to your CDK Python project!
+# Custom CDK deployment of Wordle
 
-This is a blank project for CDK development with Python.
-
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+This is a project built to showcase capabilities of AWS CDK and CDK Pipelines in creating easily configurable and reliable application deployment pipelines.
 
 This project is set up like a standard Python project.  The initialization
 process also creates a virtualenv within this project, stored under the `.venv`
@@ -12,11 +10,8 @@ directory.  To create the virtualenv it assumes that there is a `python3`
 package. If for any reason the automatic creation of the virtualenv fails,
 you can create the virtualenv manually.
 
-To manually create a virtualenv on MacOS and Linux:
+The `cdk.json` file tells the CDK Toolkit how to execute the app and contains variables using during the runtime,
 
-```
-$ python3 -m venv .venv
-```
 
 After the init process completes and the virtualenv is created, you can use the following
 step to activate your virtualenv.
@@ -55,4 +50,22 @@ command.
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
 
-Enjoy!
+
+## Deployment Steps
+
+1. Fork the repository
+2. Create [Personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for your repository
+
+3. Add a secret named `github-secret` to your AWS Account in the region you would like deployment to happen. Add your personal access token as a value.
+
+4. Run `cdk bootstrap` in order to prepare your environment for deployment. Environment is defined as AWS Account and region pair.
+
+```
+cdk bootstrap
+```
+5. Deploy the initial pipeline.
+
+```
+cdk deploy --all
+```
+From now on anytime you commit the changes to the pipeline, it will  update itself and then conduct a rolling update of the application.
