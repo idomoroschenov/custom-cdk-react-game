@@ -5,7 +5,6 @@ RUN npm install
 COPY . .
 
 FROM node_modules AS prod_builder
-RUN npm install
 RUN npm run build
 
 FROM nginx:1.20.2-alpine
@@ -14,6 +13,5 @@ COPY docker/etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=prod_builder /app/build /usr/share/nginx/html
 COPY docker/build_system.sh .
 RUN ./build_system.sh && rm ./build_system.sh
-# port use by Nginx within docker network.
 EXPOSE 8080
 USER reactle

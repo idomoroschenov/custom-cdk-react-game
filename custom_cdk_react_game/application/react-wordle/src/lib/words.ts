@@ -79,7 +79,9 @@ export const localeAwareUpperCase = (text: string) => {
 }
 
 export const getToday = () => {
-  const today = new Date()
+  let start = new Date(2099, 0, 1)
+  let end = new Date()
+  const today = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
   today.setHours(0, 0, 0, 0)
   return today
 }
