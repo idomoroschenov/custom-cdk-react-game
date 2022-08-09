@@ -1,6 +1,9 @@
 
 # Custom CDK deployment of Wordle
 
+**NOTICE**
+Application used as an example in this CDK project is a fork of: https://github.com/cwackerfuss/react-wordle
+
 This is a project built to showcase capabilities of AWS CDK and CDK Pipelines in creating easily configurable and reliable application deployment pipelines.
 
 This project is set up like a standard Python project.  The initialization
