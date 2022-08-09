@@ -72,3 +72,7 @@ cdk bootstrap
 cdk deploy --all
 ```
 From now on anytime you commit the changes to the pipeline, it will  update itself and then conduct a rolling update of the application.
+
+## Output
+
+The application will be available via an Application load balancer called *react* in the same AWS account.
