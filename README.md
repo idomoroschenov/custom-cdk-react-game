@@ -1,6 +1,8 @@
 
 # Custom CDK deployment of Wordle
 
+![Infrastructure Diagram](./images/reactle_3.png)
+
 **NOTICE**
 Application used as an example in this CDK project is a fork of: https://github.com/cwackerfuss/react-wordle
 
@@ -77,7 +79,7 @@ From now on anytime you commit the changes to the pipeline, it will  update itse
 
 ## Output
 
-The application will be available via an Application load balancer called *react* in the same AWS account.
+The application will be available via an Application load balancer called `react` in the same AWS account.
 
 An example deployment would look like this.
 
