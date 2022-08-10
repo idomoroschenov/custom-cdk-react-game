@@ -21,7 +21,7 @@ class PipelineStack(cdk.Stack):
                                 pipeline_name="BuildPipeline",
                                 synth=ShellStep("Synth",
                                                 input=CodePipelineSource.git_hub(
-                                                    "idomoroschenov/custom-cdk-react-game", "main"),
+                                                    f"{self.node.try_get_context('account_name')}/{self.node.try_get_context('repository_name')}", f"{self.node.try_get_context('branch_name')}"),
                                                 commands=["npm install -g aws-cdk",
                                                           "python -m pip install -r requirements.txt",
                                                           "cdk synth"]),

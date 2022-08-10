@@ -61,12 +61,14 @@ command.
 
 3. Add a secret named `github-secret` to your AWS Account in the region you would like deployment to happen. Add your personal access token as a value.
 
-4. Run `cdk bootstrap` in order to prepare your environment for deployment. Environment is defined as AWS Account and region pair.
+4. Change variables `account_name`, `repository_name` and `branch_name` in **cdk.json** file to reflect your source repository. 
+
+5. Run `cdk bootstrap` in order to prepare your environment for deployment. Environment is defined as AWS Account and region pair.
 
 ```
 cdk bootstrap
 ```
-5. Deploy the initial pipeline.
+6. Deploy the initial pipeline.
 
 ```
 cdk deploy --all
@@ -76,3 +78,11 @@ From now on anytime you commit the changes to the pipeline, it will  update itse
 ## Output
 
 The application will be available via an Application load balancer called *react* in the same AWS account.
+
+An example deployment would look like this.
+
+![Deployment version 1](./images/reactle_1.png)
+
+We can apply the changes to the underlying code to change a background color and push the changes to the repo. After the rolling update would happen and application would look like that.
+
+![Deployment version 2](./images/reactle_2.png)

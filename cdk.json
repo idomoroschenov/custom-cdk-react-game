@@ -34,6 +34,9 @@
       "aws",
       "aws-cn"
     ],
-    "admin_role_name": "Admin"
+    "admin_role_name": "Admin",
+    "account_name": "idomoroshchenov",
+    "repository_name": "custom-cdk-react-game",
+    "branch_name": "main"
   }
 }
