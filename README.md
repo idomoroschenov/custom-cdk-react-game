@@ -63,16 +63,19 @@ command.
 1. Fork the repository
 2. Create [Personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) for your repository
 
+
 3. Add a secret named `github-secret` to your AWS Account in the region you would like deployment to happen. Add your personal access token as a value.
 
 4. Change variables `account_name`, `repository_name` and `branch_name` in **cdk.json** file to reflect your source repository. 
 
-5. Run `cdk bootstrap` in order to prepare your environment for deployment. Environment is defined as AWS Account and region pair.
+5. Make sure you have set up your environment to be ready to authenticate to AWS via either AWS CLI or environment variables. You can read more [here](https://docs.aws.amazon.com/cdk/v2/guide/environments.html)
+
+6. Run `cdk bootstrap` in order to prepare your environment for deployment. Environment is defined as AWS Account and region pair.
 
 ```
 cdk bootstrap
 ```
-6. Deploy the initial pipeline.
+7. Deploy the initial pipeline.
 
 ```
 cdk deploy --all
